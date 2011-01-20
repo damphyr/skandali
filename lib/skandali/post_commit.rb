@@ -29,22 +29,34 @@ module Skandali
     #Pulls the trigger
     def pull repo_path,revision
       #get the changeset
-      #changes=
+      changes=target(repo_path,revision)
       #find out which actions need to be triggered
       actions=[]
       changes.each do |change|
-        actions+=engine.trigger?
+        actions+=@engine.trigger?(change)
       end
       #and trigger them
       actions.each do |action|
-        if action[:url]
-          url = URI.parse(action[:url])
-          res = Net::HTTP.start(url.host, url.port) {|http| http.get(url.path)}
-        end
-        if action[:cmd]
-
+        begin
+          if action[:url]
+            url = URI.parse(action[:url])
+            res = Net::HTTP.start(url.host, url.port) {|http| http.get(url.path)}
+          end
+          if action[:cmd]
+            cmd=Patir::ShellCommand.new(:cmd=>action[:cmd])
+            cmd.run
+          end
+        rescue
         end
       end
+    end
+    #Targets the hook script (determines the contents of the changeset)
+    def target repo_path,revision
+      changes=Patir::ShellCommand.new(:cmd=>"svnlook changed #{repo_path} -r #{revision}")
+      changes.run
+      fields=changes.output.split
+      changed=fields.collect{|f| f if fields.index(f)%2==1}.compact
+      return changed
     end
   end
 end
