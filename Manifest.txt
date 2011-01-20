@@ -1,0 +1,9 @@
+History.txt
+Manifest.txt
+README.txt
+Rakefile
+lib/skandali/main.rb
+lib/skandali/rules_engine.rb
+lib/skandali/post_commit.rb
+test/test_rules_engine.rb
+test/test_main.rb
