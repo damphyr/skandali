@@ -1,6 +1,6 @@
 require 'net/http'
 require 'uri'
-
+require 'optparse'
 require 'patir/command'
 
 module Skandali

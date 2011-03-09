@@ -1,14 +1,15 @@
 = skandali
 
-* FIX (url)
+* https://github.com/damphyr/skandali
 
 == DESCRIPTION:
 
-A tool to manage post-commit hooks for subversion servers with multiple repositories
+A tool to manage subversion and git servers with multiple repositories
 
 == FEATURES/PROBLEMS:
-
-* Simple pattern matching that executes actions (HTTP GETs or shell commands) based on the path of the change sets
+* creation of repositories
+* management of access lists for repositories
+* post-commit scripts with simple pattern matching that executes actions (HTTP GETs or shell commands) based on the path of the change sets
 * Web based management dashboard that allows to add or delete hooks and specify the trigger rules for a server
 
 == SYNOPSIS:
