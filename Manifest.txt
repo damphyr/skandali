@@ -8,3 +8,4 @@ lib/skandali/post_commit.rb
 lib/skandali/pre_commit.rb
 test/test_rules_engine.rb
 test/test_post_commit.rb
+test/test_pre_commit.rb

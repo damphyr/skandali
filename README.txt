@@ -13,11 +13,11 @@ A tool to manage subversion and git servers with multiple repositories
 * Web based management dashboard that allows to add or delete hooks and specify the trigger rules for a server
 
 == SYNOPSIS:
-
-  FIX (code sample of usage)
+	Not done yet, so there's nothing to see. Move along
 
 == REQUIREMENTS:
-
+	Aside from sinatra there are no gem dependencies currently required.
+	
 == INSTALL:
 
 * sudo gem i skandali
@@ -26,7 +26,7 @@ A tool to manage subversion and git servers with multiple repositories
 
 (The MIT License)
 
-Copyright (c) 2011 FIX
+Copyright (c) 2011 Vassilis Rizopoulos
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
